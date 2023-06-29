@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class BrandRequest extends FormRequest {
     /**
-     * Определяет, есть ли права у пользователя на этот запрос
+     * Determines if the user has rights to this request
      *
      * @return bool
      */
@@ -15,7 +15,7 @@ class BrandRequest extends FormRequest {
     }
 
     /**
-     * Возвращает массив правил для проверки полей формы
+     * Returns an array of given rules
      *
      * @return array
      */
@@ -36,40 +36,33 @@ class BrandRequest extends FormRequest {
     }
 
     /**
-     * Возвращает массив сообщений об ошибках для заданных правил
+     * Returns an array of error messages for the given rules
      *
      * @return array
      */
     public function messages() {
         return [
-            'required' => 'Поле «:attribute» обязательно для заполнения',
-            'unique' => 'Такое значение поля «:attribute» уже используется',
+            'required' => 'The «:attribute» field is required',
+            'unique' => 'This «:attribute» field value is already in use',
             'min' => [
-                'string' => 'Поле «:attribute» должно быть не меньше :min символов',
-                'integer' => 'Поле «:attribute» должно быть :min или больше',
-                'file' => 'Файл «:attribute» должен быть не меньше :min Кбайт'
+                'string' => 'The «:attribute» must be at least :min characters',
+                'integer' => 'The «:attribute» must be at least :min',
             ],
             'max' => [
-                'string' => 'Поле «:attribute» должно быть не больше :max символов',
-                'file' => 'Файл «:attribute» должен быть не больше :max Кбайт'
+                'string' => 'The «:attribute» must be no more than :max characters',
             ],
-            'mimes' => 'Файл «:attribute» должен иметь формат :values',
         ];
     }
 
     /**
-     * Возвращает массив дружественных пользователю названий полей
+     * Returns an array of user-friendly field names
      *
      * @return array
      */
     public function attributes() {
         return [
-            'name' => 'Наименование',
-            'slug' => 'ЧПУ (англ.)',
-            'category_id' => 'Категория',
-            'excerpt' => 'Анонс поста',
-            'content' => 'Текст поста',
-            'image' => 'Изображение',
+            'title' => 'Name',
+            'content' => 'Text',
         ];
     }
 }

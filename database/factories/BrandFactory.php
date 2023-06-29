@@ -7,18 +7,8 @@ use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
 $factory->define(Brand::class, function (Faker $faker) {
-    //$title = $faker->realText(rand(20, 50));
+    $title = $faker->realText(rand(20, 50));
     return [
-        'title' => [
-            'Hellboy',
-            'Harry Potter',
-            'Captain Price',
-            'Dead Space',
-            'Pokemon',
-            'Call of Duty',
-            'FIFA 22',
-            'Project Zomboid',
-            'Sonic'
-        ],
+        'title' => $title
     ];
 });

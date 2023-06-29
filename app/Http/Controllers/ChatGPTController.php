@@ -8,7 +8,10 @@ use Illuminate\Support\Facades\Http;
 class ChatGPTController extends Controller
 {
 
-
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
+     */
     public function ask(Request $request)
     {
         $brand = new Brand();
@@ -18,6 +21,11 @@ class ChatGPTController extends Controller
         return view('brand.create', ['response' => $response], compact('brand'));
     }
 
+    /**
+     * @param Brand $brand
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
+     */
     public function askEdit(Brand $brand, Request $request)
     {
         $prompt = $request->input('prompt');
@@ -25,7 +33,10 @@ class ChatGPTController extends Controller
         return view('brand.edit', ['response' => $response], compact('brand'));
     }
 
-
+    /**
+     * @param $prompt
+     * @return mixed
+     */
     private function askToChatGPT($prompt)
     {
         $response = Http::withoutVerifying()
@@ -40,6 +51,5 @@ class ChatGPTController extends Controller
 
         return $response->json()['choices'][0]['text'];
     }
-
 
 }

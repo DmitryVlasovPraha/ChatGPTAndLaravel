@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\BrandRequest;
 use App\Models\Brand;
-use Illuminate\Http\Request;
+
 
 class BrandController extends Controller
 {
@@ -18,6 +18,7 @@ class BrandController extends Controller
 
     /**
      * Show the form for creating a new resource.
+     *
      */
     public function create()
     {
@@ -25,7 +26,7 @@ class BrandController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created brand.
      */
     public function store(BrandRequest $request)
     {
@@ -55,7 +56,7 @@ class BrandController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update brand.
      */
     public function update(BrandRequest $request, Brand $brand)
     {

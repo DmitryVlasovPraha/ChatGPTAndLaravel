@@ -14,13 +14,13 @@
                             @method('PUT')
                             @csrf
                             <div class="form-group">
-                                <input type="text" name="title" class="form-control" placeholder="Ask something..." value="{{ old('title') ?? $brand->title ?? '' }}" >
+                                <input type="text" name="title" required class="form-control" placeholder="Ask something..." value="{{ old('title') ?? $brand->title ?? '' }}" >
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Example textarea</label>
-                                <textarea class="form-control" name="content" id="exampleFormControlTextarea1">{{$response ?? $brand->content ?? ''}}</textarea>
+                                <textarea class="form-control" name="content" required id="exampleFormControlTextarea1">{{$response ?? $brand->content ?? ''}}</textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Send</button>
+                            <button type="submit" class="btn btn-primary">Update brand</button>
                         </form>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                                 <input type="text" class="form-control text-center" value="{{$brand->title}}" name="prompt" placeholder="Ask something">
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Send</button>
+                            <button type="submit" class="btn btn-primary">Send message to ChatGPT</button>
                         </form>
                     </div>
                 </div>
