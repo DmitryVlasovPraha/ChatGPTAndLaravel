@@ -27,7 +27,7 @@ class ChatGPTController extends Controller
      * @param Request $request
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
      */
-    public function askEdit(Brand $brand, Request $request)
+    public function askEdit(Brand $brand, ChatGPTRequest $request)
     {
         $prompt = $request->input('prompt');
         $response = $this->askToChatGPT($prompt);

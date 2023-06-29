@@ -39,7 +39,6 @@
                             <div class="form-group">
                                 <input type="text" class="form-control text-center" value="{{$brand->title}}" name="prompt" placeholder="Ask something">
                             </div>
-
                             <button type="submit" class="btn btn-primary">Send message to ChatGPT</button>
                         </form>
                     </div>
