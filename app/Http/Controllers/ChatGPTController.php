@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ChatGPTRequest;
 use App\Models\Brand;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -12,7 +13,7 @@ class ChatGPTController extends Controller
      * @param Request $request
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
      */
-    public function ask(Request $request)
+    public function ask(ChatGPTRequest $request)
     {
         $brand = new Brand();
         $prompt = $request->input('prompt');
@@ -41,7 +42,7 @@ class ChatGPTController extends Controller
     {
         $response = Http::withoutVerifying()
             ->withHeaders([
-                'Authorization' => 'Bearer ' . env('CHATGPT_API_KEY'),
+                'Authorization' => 'Bearer ' . config('openai.api_key'),
                 'Content-Type' => 'application/json',
             ])->post('https://api.openai.com/v1/engines/text-davinci-003/completions', [
                 "prompt" => $prompt,

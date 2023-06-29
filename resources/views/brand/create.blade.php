@@ -5,10 +5,9 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8 mb-2">
+            <div class="col-md-8 mb-4">
                 <div class="card">
                     <div class="card-header">Brand</div>
-
                     <div class="card-body">
                         <form method="post" action="{{ route('brand.store') }}">
                             @csrf
@@ -19,7 +18,6 @@
                                 <label for="exampleFormControlTextarea1">Text</label>
                                 <textarea class="form-control" name="content" id="exampleFormControlTextarea1" required rows="3">{{$response ?? ''}}</textarea>
                             </div>
-
                             <button type="submit" class="btn btn-primary">Create brand</button>
                         </form>
                     </div>
@@ -41,7 +39,6 @@
                                     <input type="text" class="form-control text-center" name="prompt" placeholder="Ask something">
                                 </label>
                             </div>
-
                             <button type="submit" class="btn btn-primary">Send message to ChatGPT</button>
                         </form>
                     </div>
