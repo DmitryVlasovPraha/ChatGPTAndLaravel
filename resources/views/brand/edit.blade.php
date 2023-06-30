@@ -7,8 +7,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8 mb-4">
                 <div class="card">
-                    <div class="card-header">Условный продукт</div>
-
+                    <div class="card-header">Brand</div>
                     <div class="card-body">
                         <form method="post" action="{{ route('brand.update',['brand' => $brand->id])}}" enctype="multipart/form-data">
                             @method('PUT')
@@ -17,7 +16,7 @@
                                 <input type="text" name="title" required class="form-control" placeholder="Ask something..." value="{{ old('title') ?? $brand->title ?? '' }}" >
                             </div>
                             <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Example textarea</label>
+                                <label for="exampleFormControlTextarea1">Text</label>
                                 <textarea class="form-control" name="content" required id="exampleFormControlTextarea1">{{$response ?? $brand->content ?? ''}}</textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Update brand</button>

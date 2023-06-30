@@ -28,9 +28,7 @@ class BrandRequest extends FormRequest {
                 'max:100',
             ],
             'content' => [
-                'required',
                 'string',
-                'min:3'
             ]
         ];
     }

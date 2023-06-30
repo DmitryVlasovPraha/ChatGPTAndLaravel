@@ -4,10 +4,9 @@
 
 use App\Models\Brand;
 use Faker\Generator as Faker;
-use Illuminate\Support\Str;
 
 $factory->define(Brand::class, function (Faker $faker) {
-    $title = $faker->realText(rand(20, 50));
+    $title = $faker->realText(rand(10, 20));
     return [
         'title' => $title
     ];

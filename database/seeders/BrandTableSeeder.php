@@ -12,7 +12,6 @@ class BrandTableSeeder extends Seeder {
      * @return void
      */
     public function run() {
-        // создать 5 страниц
         factory(Brand::class, 100)->create();
     }
 }
